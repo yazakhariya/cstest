@@ -2,19 +2,15 @@ import styles from "./TableComponent.module.css";
 import Image from "next/image";
 import del from "@/app/assets/delete.svg";
 
-export default function TableComponent() {
-  const mockData = [
-    {
-      id: 1,
-      name: "Jakson",
-      text: "10%",
-    },
-    {
-      id: 2,
-      name: " Mark",
-      text: "10%",
-    },
-  ];
+async function getDocs() {
+    const res = await fetch('http://127.0.0.1:8090/api/', { cache: 'no-store' });
+    const data = await res.json();
+    return data
+}
+export default async function TableComponent() {
+  const files = await getDocs();
+  console.log(files)
+
 
   return (
     <div className={styles.container}>
@@ -33,7 +29,7 @@ export default function TableComponent() {
               <button className={styles.button}>Create</button>
             </td>
           </tr>
-          {mockData.map((el) => {
+          {/* {files?.map((el) => {
             return (
               <tr key={el.id}>
                 <td className={styles.body}>{el.name}</td>
@@ -46,7 +42,7 @@ export default function TableComponent() {
                 </td>
               </tr>
             );
-          })}
+          })} */}
         </tbody>
       </table>
       <button className={styles.button}>Download</button>

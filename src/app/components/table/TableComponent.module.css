@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.table {
+    width: 100%;
+}
+
+.header {
+    color: #8E8E93;
+    padding: 10px;
+    border-bottom: 1px solid #00172929;
+}
+
+.body {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #00172929;
+}
+
+.buttonCreate {
+    text-align: left;
+    padding: 5px;
+}
+
+.button {
+    background: #05bae3dc;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.button:hover {
+    transition: 0.4s;
+    background: #0905e3dc;
+}
+
+.deleteButton {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.deleteButton:hover {
+    transition: 0.3s;
+    rotate: 10deg;
+}
+
+.footerButton {
+    text-align: right;
+}

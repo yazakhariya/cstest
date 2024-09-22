@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Image from "next/image";
-import logo from "./logo.svg";
+import logo from "./assets/logo.svg";
+import TableComponent from "./components/table/TableComponent";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           </div>
           <Image src={logo} alt={"Page logo"} />
         </div>
+        <TableComponent />
       </main>
     </div>
   );

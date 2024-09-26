@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "text": "Eat",
+      "name": "John",
+      "date": "today"
+    },
+    {
+      "id": "2",
+      "text": "Code",
+      "name": "July",
+      "date": "yesterday"
+    },
+    {
+      "id": "3",
+      "text": "Sleep",
+      "name": "Jack",
+      "date": "22.02.2024"
+    },
+    {
+      "id": "4",
+      "text": "Repeat",
+      "name": "Abby",
+      "date": "23.04.2023"
+    }
+  ]
+}

@@ -1,16 +1,25 @@
+"use client"
+
+import { getItems } from "../../../../api";
 import styles from "./TableComponent.module.css";
 import Image from "next/image";
 import del from "@/app/assets/delete.svg";
+import { useState } from "react";
 
-async function getDocs() {
-    const res = await fetch('http://127.0.0.1:8090/api/', { cache: 'no-store' });
-    const data = await res.json();
-    return data
+interface IElem {
+  name: string;
+  date: number;
+  text: string;
+  id: number;
 }
-export default async function TableComponent() {
-  const files = await getDocs();
-  console.log(files)
 
+export default async function TableComponent() {
+  const [openModal, setModalOpen] = useState<boolean>(false)
+  const files = await getItems();
+
+  const handleCtreateItem = () => {
+    setModalOpen(true)
+  }
 
   return (
     <div className={styles.container}>
@@ -26,14 +35,15 @@ export default async function TableComponent() {
         <tbody>
           <tr>
             <td className={styles.buttonCreate}>
-              <button className={styles.button}>Create</button>
+              <button onClick={() => handleCtreateItem()} className={styles.button}>Create</button>
+              {modalOpen === "true" ? <TableModal openModal={openModal} setModalOpen={setModalOpen} /> : null}
             </td>
           </tr>
-          {/* {files?.map((el) => {
+          {files?.map((el: IElem) => {
             return (
               <tr key={el.id}>
                 <td className={styles.body}>{el.name}</td>
-                <td className={styles.body}>{el.name}</td>
+                <td className={styles.body}>{el.date}</td>
                 <td className={styles.body}>{el.text}</td>
                 <td className={styles.body}>
                   <button className={styles.deleteButton}>
@@ -42,7 +52,7 @@ export default async function TableComponent() {
                 </td>
               </tr>
             );
-          })} */}
+          })}
         </tbody>
       </table>
       <button className={styles.button}>Download</button>

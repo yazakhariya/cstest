@@ -47,7 +47,7 @@
     background: transparent;
 }
 
-.deleteButton:hover {
+.deleteButton:active {
     transition: 0.3s;
     rotate: 10deg;
 }

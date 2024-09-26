@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "json-server": "json-server --watch data/db.json --port 3002"
   },
   "dependencies": {
+    "@nextui-org/modal": "^2.0.41",
     "@nextui-org/system": "^2.2.6",
     "@nextui-org/table": "^2.0.40",
     "@nextui-org/theme": "^2.2.11",

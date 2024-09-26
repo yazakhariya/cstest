@@ -1,0 +1,58 @@
+.modalWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #55557560;
+}
+
+.modalContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #8e8e93;
+  border-radius: 10px;
+}
+
+.modalInput {
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  outline: none;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.buttonClose {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.button {
+  background: #05bae3dc;
+  padding: 15px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.button:hover {
+  transition: 0.4s;
+  background: #0905e3dc;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+}

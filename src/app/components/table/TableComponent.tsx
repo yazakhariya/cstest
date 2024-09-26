@@ -1,10 +1,8 @@
-"use client"
-
 import { getItems } from "../../../../api";
 import styles from "./TableComponent.module.css";
 import Image from "next/image";
 import del from "@/app/assets/delete.svg";
-import { useState } from "react";
+import CreateItem from "./CreateItem";
 
 interface IElem {
   name: string;
@@ -14,12 +12,7 @@ interface IElem {
 }
 
 export default async function TableComponent() {
-  const [openModal, setModalOpen] = useState<boolean>(false)
   const files = await getItems();
-
-  const handleCtreateItem = () => {
-    setModalOpen(true)
-  }
 
   return (
     <div className={styles.container}>
@@ -35,8 +28,7 @@ export default async function TableComponent() {
         <tbody>
           <tr>
             <td className={styles.buttonCreate}>
-              <button onClick={() => handleCtreateItem()} className={styles.button}>Create</button>
-              {modalOpen === "true" ? <TableModal openModal={openModal} setModalOpen={setModalOpen} /> : null}
+              <CreateItem />
             </td>
           </tr>
           {files?.map((el: IElem) => {

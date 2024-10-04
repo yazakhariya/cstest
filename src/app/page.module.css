@@ -11,6 +11,7 @@
   min-height: 100svh;
   padding: 80px;
   font-family: var(--font-geist-sans);
+  background: #f2f2f7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,10 +38,11 @@
 
 .main {
   padding: 48px 64px 48px 64px;
-  background: #f2f2f7;
+  background: #8ccdc0;
   display: flex;
   flex-direction: column;
   gap: 64px;
+  border-radius: 20px;
 }
 
 /* Enable hover only on non-touch devices */

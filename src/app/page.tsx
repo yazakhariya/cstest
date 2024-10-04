@@ -1,6 +1,4 @@
 import styles from "./page.module.css";
-import Image from "next/image";
-import logo from "./assets/logo.svg";
 import TableComponent from "./components/table/TableComponent";
 
 export default function Home() {
@@ -9,10 +7,8 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.head}>
           <div className={styles.header_text}>
-            <h1>Тестовое задание</h1>
-            <h3>Frontend-разработчик: Захария Яна Владимировна</h3>
+            <h1>Next.js CRUD-table</h1>
           </div>
-          <Image src={logo} alt={"Page logo"} />
         </div>
         <TableComponent />
       </main>

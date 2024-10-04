@@ -1,18 +1,19 @@
-import { getItems } from "../../../../api";
-import styles from "./TableComponent.module.css";
-import Image from "next/image";
-import del from "@/app/assets/delete.svg";
-import CreateItem from "./CreateItem";
+import { getItems } from '../../../../api'
+import styles from './TableComponent.module.css'
+import Image from 'next/image'
+import del from '@/app/assets/delete.svg'
+import CreateItem from './CreateItem'
+import DownloadJSON from './download'
 
-interface IElem {
-  name: string;
-  date: number;
-  text: string;
-  id: number;
+export interface IElem {
+  name: string
+  date: number
+  text: string
+  id: number
 }
 
 export default async function TableComponent() {
-  const files = await getItems();
+  const files = await getItems()
 
   return (
     <div className={styles.container}>
@@ -39,15 +40,16 @@ export default async function TableComponent() {
                 <td className={styles.body}>{el.text}</td>
                 <td className={styles.body}>
                   <button className={styles.deleteButton}>
-                    <Image width={30} src={del} alt={"Delete button"} />
+                    <Image width={30} src={del} alt={'Delete button'} />
                   </button>
                 </td>
               </tr>
-            );
+            )
           })}
         </tbody>
       </table>
-      <button className={styles.button}>Download</button>
+      {/* <button className={styles.button}>Download</button> */}
+      <DownloadJSON data={files} fileName="data" />
     </div>
-  );
+  )
 }
